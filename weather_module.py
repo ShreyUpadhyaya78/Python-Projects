@@ -119,7 +119,9 @@ def get_weather_forecast_info(city_name, country_code):
     """
     try:
         #get latitude and longitude value from function get_coordinate_info
-        latitude_value, longitude_value = str(get_coordinate_info(city_name, country_code))
+        latitude_value, longitude_value = get_coordinate_info(city_name, country_code)
+        latitude_value=str(latitude_value)
+        longitude_value=str(longitude_value)
         if latitude_value is None or longitude_value is None:
             return
         #url to get forecast data of 3 days from free API
